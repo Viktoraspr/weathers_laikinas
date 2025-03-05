@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+            <label for="city"> City: </label>
+            <input id="city" type="text" name="city">
+
+            <label for="country"> Country: </label>
+            <input id="country" type="text" name="country">
+
+            <label for="coordination_x"> Coordination_X: </label>
+            <input id="coordination_x" type="number" name="coordination_x">
+
+            <label for="coordination_y"> Coordination_Y: </label>
+            <input id="coordination_y" type="number" name="coordination_y">
+
+        <input type="submit" value="Add">
+    </form>
+
+{% endblock %}

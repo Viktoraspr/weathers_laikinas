@@ -2,11 +2,11 @@ from django.urls import path
 
 from . import views
 
+app_name = 'weathers'
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", views.index, name="cities"),
     path("<int:pk>", views.detail, name="city"),
-    # sukurti nauja patha kuriam butu orai ir juos atvaziuti html faile
-    path("orai/<int:pk>", views.orai, name="orai"),
+    path("add", views.add_city, name="city_add"),
 ]
 

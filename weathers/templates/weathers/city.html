@@ -1,3 +1,25 @@
+{% extends 'main.html' %}
 
-{{ city.name }}
-{{ city.country }}
+{% block content %}
+
+    {% if city %}
+
+        {{ city.name }}
+        {{ city.country }}
+        {{ value }}
+        2.8
+    {% else %}
+        <ul>
+            {{ value }}
+            {% for city in cities %}
+                <p> mes esame cia </p>
+                <li><a href="{% url 'weathers:city' city.id %}" >{{ city.name }} {{ city.country }} </a></li>
+            {% endfor %}
+            {% for weather in weathers %}
+                <p> {{ weather.city. }} </p>
+                <li><a href="{% url 'weathers:city' city.id %}" >{{ city.name }} {{ city.country }} </a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endblock %}

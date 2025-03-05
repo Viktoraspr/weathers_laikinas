@@ -1,9 +1,17 @@
-{% if cities %}
-    <ul>
-    {% for city in cities %}
-        <li><a href="{% url 'city' city.id %}" >{{ city.name }} {{ city.country }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No cities are available.</p>
-{% endif %}
+{% extends 'main.html' %}
+
+{% block content %}
+
+    {% if cities %}
+        <ul>
+        {% for city in cities %}
+            <li><a href="{% url 'weathers:city' city.id %}" >{{ city.name }} {{ city.country }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No cities are available.</p>
+    {% endif %}
+
+    <a href="{% url 'weathers:city_add' %}" > <button type="button" class="btn btn-primary" > Add city </button> </a>
+
+{% endblock %}
